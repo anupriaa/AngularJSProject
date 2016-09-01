@@ -1,0 +1,36 @@
+<div class="col-xs-12">
+  <div class="jumbotron text-center">
+    <h1>Add Item Below</h1>
+  </div>
+  <form name="toDoListForm">
+
+    <p><b>Dirty:</b> {{toDoListForm.$dirty}}</p>
+    <p><b>Pristine:</b> {{toDoListForm.$pristine}}</p>
+    <p><b>Valid:</b> {{toDoListForm.$valid}}</p>
+
+    <div class="alert alert-danger" role="alert" ng-show="toDoListForm.$dirty && !toDoListForm.$valid">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      Enter a valid grocery item!
+    </div>
+
+    <div class="form-group">
+      <input type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="ToDo Item" ng-model="toDoItem.itemName">
+    </div>
+
+    <div class="form-group">
+      <button type="button"  class="btn btn-success btn-lg btn-block" ng-click="toDoListForm.$valid && save()">
+        <span class="glyphicon glyphicon-pushpin"></span>
+        Save
+      </button>
+    </div>
+
+    <div class="form-group">
+      <a href="#/" class="btn btn-default btn-lg btn-block">
+        <span class="glyphicon glyphicon-remove"></span>
+        Cancel
+      </a>
+    </div>
+  </form>
+  {{temp}}
+</div>

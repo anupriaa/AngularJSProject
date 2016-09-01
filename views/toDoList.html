@@ -1,0 +1,12 @@
+<div class="col-xs-12">
+  <a href = "#/addItem" style="margin-bottom: 10px;" class="btn btn-primary btn-lg  btn-block">
+    <span class="glyphicon glyphicon-plus"></span>
+    Add Item
+  </a>
+  <ul class="list-group">
+    <!--To reverse the order -date-->
+    <li ng-repeat="item in toDoListItems | orderBy:'-date'" class="list-group-item text-center clearfix">
+      <ap-to-do-items></ap-to-do-items>
+    </li>
+  </ul>
+</div>
